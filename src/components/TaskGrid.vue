@@ -1,11 +1,13 @@
 <template>
     <div>
-        <h3 v-for="task in tasks" :key="task">{{ task.name }}</h3>
+        <task v-for="task in tasks" :key="task.name" :task="task">{{ task.name }}</task>
     </div>
 </template>
 
 <script>
+import Task from '@/components/Task'
 export default {
+    components: { Task },
     data() {
         return {
             tasks:[
