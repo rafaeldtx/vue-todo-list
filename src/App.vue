@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-        <task-grid />
+        <task-grid :tasks="tasks" />
 	</div>
 </template>
 
@@ -8,7 +8,17 @@
 import TaskGrid from './components/TaskGrid'
 
 export default {
-    components: { TaskGrid }
+    components: { TaskGrid },
+    data() {
+        return {
+            tasks: [
+                { name: 'Clean the house', done: false },
+                { name: 'Walk with dog', done: true },
+                { name: 'Buy food', done: true },
+                { name: 'Pay ligth account', done: false }
+            ]
+        }
+    }
 }
 </script>
 
