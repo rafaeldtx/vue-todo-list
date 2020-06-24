@@ -1,12 +1,14 @@
 <template>
 	<div id="app">
-		<h1>Tarefas</h1>
+		<h1>To do List</h1>
+        <task-grid />
 	</div>
 </template>
 
 <script>
+import TaskGrid from './components/TaskGrid'
 export default {
-
+    components: { TaskGrid }
 }
 </script>
 
