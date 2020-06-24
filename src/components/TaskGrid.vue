@@ -1,5 +1,7 @@
 <template>
     <div>
+		<h1 class="title">To do List</h1>
+
         <task v-for="task in tasks" :key="task.name" :task="task">{{ task.name }}</task>
     </div>
 </template>
