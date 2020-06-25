@@ -1,0 +1,10 @@
+version: '3'
+services:
+    web:
+        build: .
+        entrypoint: npm run serve
+        container_name: vue-todo-list
+        ports:
+            - 8080:8080
+        volumes:
+            - .:/vue-todo-list
