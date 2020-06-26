@@ -1,22 +1,24 @@
 <template>
 	<div id="app">
+        <new-task @taskAdded="addTask" />
         <task-grid :tasks="tasks" />
 	</div>
 </template>
 
 <script>
 import TaskGrid from './components/TaskGrid'
+import NewTask from './components/NewTask'
 
 export default {
-    components: { TaskGrid },
+    components: { TaskGrid, NewTask },
     data() {
         return {
-            tasks: [
-                { name: 'Clean the house', done: false },
-                { name: 'Walk with dog', done: true },
-                { name: 'Buy food', done: true },
-                { name: 'Pay ligth account', done: false }
-            ]
+            tasks: []
+        }
+    },
+    methods: {
+        addTask(task) {
+            this.tasks.push({ name: task.name, done: false })
         }
     }
 }
