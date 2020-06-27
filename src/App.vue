@@ -18,7 +18,12 @@ export default {
     },
     methods: {
         addTask(task) {
-            this.tasks.push({ name: task.name, done: false })
+            const sameName = t => t.name === task.name
+            const isNotPresent = this.tasks.filter(sameName).length === 0
+
+            if (isNotPresent) {
+                this.tasks.push({ name: task.name, done: false })
+            }
         }
     }
 }
