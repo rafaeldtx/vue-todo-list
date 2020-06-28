@@ -1,30 +1,36 @@
-# todo
+# vue-todo-list
+This repository has a simple example of a todo list app in Vue.js
 
-## Project setup
-```
-npm install
-```
+### System requirements
+- Docker/Docker-compose ([docker](https://docs.docker.com/engine/install "docker") / [docker-compose](https://docs.docker.com/compose/install/ "docker-compose"))
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Setup Project
 
-### Compiles and minifies for production
+Access the terminal inside project folder and execute the steps:
+
+Build image
 ```
-npm run build
+$ docker-compose build
 ```
 
-### Run your tests
+Run project in background (detached)
 ```
-npm run test
+$ docker-compose up -d
+```
+
+## Running tests
+Access the active terminal **"vue-todo-list"**
+```
+$ docker exec -it vue-todo-list bash
+```
+
+### Run tests
+```
+$ npm run test:unit
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+$ npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue-todo-list
