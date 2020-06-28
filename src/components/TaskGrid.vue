@@ -1,7 +1,5 @@
 <template>
     <div class="task-grid">
-		<h1 class="title">To do List</h1>
-
         <div class="tasks-list">
             <template v-if="tasks.length">
                 <task
@@ -9,6 +7,7 @@
                     :key="task.name"
                     :task="task"
                     @taskDeleted="$emit('taskDeleted', i)"
+                    @toggleDone="$emit('toggleDone', i)"
                 >
                     {{ task.name }}
                 </task>

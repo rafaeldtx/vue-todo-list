@@ -1,9 +1,12 @@
 <template>
 	<div id="app">
+		<h1>Tarefas</h1>
+
         <new-task @taskAdded="addTask" />
         <task-grid
             :tasks="tasks"
             @taskDeleted="removeTask"
+            @toggleDone="toggleDone"
         />
 	</div>
 </template>
@@ -30,6 +33,9 @@ export default {
         },
         removeTask(index) {
             this.tasks.splice(index, 1)
+        },
+        toggleDone(index) {
+            this.tasks[index].done = !this.tasks[index].done
         }
     }
 }
