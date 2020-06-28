@@ -20,8 +20,10 @@ export default {
     },
     methods: {
         addTask() {
-            this.$emit('taskAdded', { name: this.name })
-            this.name = null
+            if (this.name) {
+                this.$emit('taskAdded', { name: this.name })
+                this.name = null
+            }
         }
     }
 }
