@@ -1,7 +1,10 @@
 <template>
 	<div id="app">
         <new-task @taskAdded="addTask" />
-        <task-grid :tasks="tasks" />
+        <task-grid
+            :tasks="tasks"
+            @taskDeleted="removeTask"
+        />
 	</div>
 </template>
 
@@ -24,6 +27,9 @@ export default {
             if (isNotPresent) {
                 this.tasks.push({ name: task.name, done: false })
             }
+        },
+        removeTask(index) {
+            this.tasks.splice(index, 1)
         }
     }
 }

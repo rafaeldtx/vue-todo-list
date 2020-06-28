@@ -4,7 +4,14 @@
 
         <div class="tasks-list">
             <template v-if="tasks.length">
-                <task v-for="task in tasks" :key="task.name" :task="task">{{ task.name }}</task>
+                <task
+                    v-for="(task, i) in tasks"
+                    :key="task.name"
+                    :task="task"
+                    @taskDeleted="$emit('taskDeleted', i)"
+                >
+                    {{ task.name }}
+                </task>
             </template>
 
             <p v-else class="empty-state">Sua vida está em dia :)</p>
