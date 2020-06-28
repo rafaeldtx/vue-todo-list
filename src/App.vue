@@ -31,6 +31,14 @@ export default {
             return Math.round(done / total * 100) || 0
         }
     },
+    watch: {
+        tasks: {
+            deep: true,
+            handler() {
+                localStorage.setItem('tasks', JSON.stringify(this.tasks))
+            }
+        }
+    },
     methods: {
         addTask(task) {
             const sameName = t => t.name === task.name
@@ -45,6 +53,14 @@ export default {
         },
         toggleDone(index) {
             this.tasks[index].done = !this.tasks[index].done
+        }
+    },
+    created() {
+        const json = localStorage.getItem('tasks')
+        const parsed_json = JSON.parse(json)
+
+        if (Array.isArray(parsed_json)) {
+            this.tasks = parsed_json
         }
     }
 }
