@@ -1,11 +1,13 @@
 <template>
-    <div class="task" :class="stateClass()">
+    <div
+        class="task"
+        :class="stateClass()"
+        @click="$emit('toggleDone', task)"
+    >
         <span
             class="close"
             @click="$emit('taskDeleted', task)"
-        >
-        x
-        </span>
+        />
         <p>{{ task.name }}</p>
     </div>
 </template>
@@ -78,5 +80,9 @@ export default {
         border-radius: 10px;
         display: flex;
         justify-content: center;
+    }
+
+    .close::before {
+        content: "x";
     }
 </style>
