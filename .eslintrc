@@ -1,0 +1,14 @@
+{
+    "extends": ["plugin:vue/base"],
+    "overrides": [
+      {
+        "files": [
+          "**/*.spec.js",
+          "**/*.spec.jsx"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  }
